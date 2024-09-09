@@ -85,9 +85,9 @@ def create_tree(root, vsb, hsb, tree, target_directory=None):
     tree.bind('<Double-Button-1>', change_dir)
 
     # Arrange the tree and its scrollbars in the toplevel
-    tree.grid(column=0, row=0, sticky='nswe')
-    vsb.grid(column=1, row=0, sticky='ns')
-    hsb.grid(column=0, row=1, sticky='ew')
-    root.grid_columnconfigure(0, weight=1)
-    root.grid_rowconfigure(0, weight=1)
+    # tree.grid(column=0, row=0, sticky='ns')
+    # vsb.grid(column=1, row=0, sticky='ns')
+    # hsb.grid(column=0, row=1, sticky='ew')
+    # root.grid_columnconfigure(0, weight=1)
+    # root.grid_rowconfigure(0, weight=0)
     # root.grid_columnconfigure(2, weight=5)
