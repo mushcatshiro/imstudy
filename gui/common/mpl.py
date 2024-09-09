@@ -1,4 +1,4 @@
-import tkinter
+import tkinter as tk
 import numpy as np
 
 # Implement the default Matplotlib key bindings.
@@ -14,7 +14,7 @@ class MplCanvas:
     """
     source: https://matplotlib.org/stable/gallery/user_interfaces/embedding_in_tk_sgskip.html
     """
-    def __init__(self, root: tkinter.Tk, title: str, fig: Figure):
+    def __init__(self, root: tk.Tk, title: str, fig: Figure):
         self.root = root
         self.root.wm_title(title)
         self.fig = fig
@@ -43,8 +43,8 @@ class MplCanvas:
         # sure the UI controls are displayed as long as possible.
         # button_quit.pack(side=tkinter.BOTTOM)
         # slider_update.pack(side=tkinter.BOTTOM)
-        self.toolbar.pack(side=tkinter.BOTTOM, fill=tkinter.X)
-        self.canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=True)
+        self.toolbar.pack(side=tk.BOTTOM, fill=tk.X)
+        self.canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
     def register_function(self, func):
         self.canvas.mpl_connect("key_press_event", func)

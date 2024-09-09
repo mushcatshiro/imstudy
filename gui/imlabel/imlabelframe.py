@@ -1,5 +1,7 @@
 import tkinter as tk
-
+from common.mpl import MplCanvas
+from common.directory_tree import create_tree
+from common.image_canvas import ImDisplayCanvas, create_im_display_canvas
 
 """
 design
@@ -26,3 +28,31 @@ zoom support?
 save to db
 load separate rgb channel
 """
+
+
+class ImLabelFrame(tk.Frame):
+    def __init__(self, root):
+        tk.Frame.__init__(self, root)
+        self.root = root
+
+        self.directory_vsb = None
+        self.directory_hsb = None
+        self.directory_tree = None
+        create_tree(
+            self.root,
+            self.directory_vsb,
+            self.directory_hsb,
+            self.directory_tree
+        )
+
+        self.form_pane = None
+        # self.image_pane = ImDisplayCanvas(self.root)
+        self.im_pane = None
+        create_im_display_canvas(
+            self.root,
+            self.im_pane,
+            r""
+        )
+
+    def execute_command(self):
+        pass

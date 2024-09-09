@@ -61,7 +61,7 @@ def autoscroll(sbar, first, last):
     sbar.set(first, last)
 
 
-def create_tree(root):
+def create_tree(root, vsb, hsb, tree, target_directory=None):
     vsb = ttk.Scrollbar(orient="vertical")
     hsb = ttk.Scrollbar(orient="horizontal")
 
